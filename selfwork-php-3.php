@@ -48,7 +48,7 @@
 
 
 
-// Gli array forniti
+ // Gli array forniti
 $words1 = [
     'vostro',
     67,
@@ -82,6 +82,17 @@ $words1 = [
     'fine' => '!'
   ];
   
+  // Array con le parole mancanti
+  $missingWords = [
+    'Nel',        // All'inizio della frase
+    'di',         // Per la struttura della frase
+    'cammin',     // Parte della frase
+    'nostra',     // Per "nostra vita"
+    'vita',       // Completamento di "nostra vita"
+    'una',        // Per "una selva oscura"
+    'che',      // Parte della frase "che la diritta"
+  ];
+  
   // Estrazione dei valori corretti
   $mezzo = $words1[6][3][0];  // "mezzo"
   $mi = $words1[4];  // "mi"
@@ -92,9 +103,11 @@ $words1 = [
   $diritta = $words1[7];  // "diritta"
   
   // Creazione della stringa finale
-  $results = "Nel $mezzo di cammin di nostra vita $mi $ritrovai $per una selva $oscura, che' la $diritta via $era smarrita";
+  $results = $missingWords[0] . " " . $missingWords[1] . " " . $missingWords[2] . " di cammin di " . $missingWords[3] . " " . $missingWords[4] . " " . $mi . " " . $ritrovai . " " . $per . " una " . $oscura . ", " . $missingWords[6] . " la " . $diritta . " via " . $era . " smarrita";
   
   // Output della stringa finale
   echo $results;
 
+
+  
 ?>
